@@ -20,4 +20,26 @@ if('webkitSpeechRecognition' in window){
         }
         textoArea.value += transcript + ' ';
     };
+
+    recognition.onerror = event=>{
+        console.error('error en reconocimiento:',event.error);
+    }
+
+}else{
+    alert('tu navegador no soporta la Web Speech API');
+}
+
+startBtn.onclick =()=>{recognition && recognition.start()};
+stoptBtn.onclick =()=>{recognition && recognition.stop()};
+
+// enviar texto a php
+guardarBtn.onclick = () =>{
+    fetch('guardar.php',{
+        method: 'POST',
+        headers:{'content-Type': 'application/x-www-form-urlencoded'},
+        body: 'texto=' + encodeURIComponent(textoAreavalue)
+    })
+    .then(res => res.text())
+    .then(data => alert('texto guardado en el servidor'))
+    .catch(err => alert('error al guardar el texto'));
 }
