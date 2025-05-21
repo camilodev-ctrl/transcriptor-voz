@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transcriptor de voz a texto</title>
+  <meta charset="UTF-8" />
+  <title>Transcriptor Voz a Texto</title>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h2>Transcriptor de voz a texto con web Speech API</h2>
-    <button id="start">Iniciar grabacion</button>
-    <button id="stop">Detener grabacion</button>
-    <p><strong>Texto transcrito: </strong></p>
-    <textarea id="texto" rows="10" cols="50"></textarea>
-    <button id="guardar">Guardar en servidor</button>
+  <h2>Transcriptor de voz a texto con Web Speech API</h2>
+  
+  <button id="start">Iniciar Grabación</button>
+  <button id="stop">Detener Grabación</button>
+  <button id="reset">Resetear Texto</button>
+  
+  <p><strong>Texto transcrito:</strong></p>
+  <textarea id="texto" rows="10" cols="50" placeholder="Aquí aparecerá el texto transcrito..."></textarea>
+  
+  <br />
+  <button id="guardar">Guardar en servidor</button>
 </body>
 </html>
