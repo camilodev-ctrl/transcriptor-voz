@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    fetch('guardar.php', {
+    fetch('php/main.php', {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: 'texto=' + encodeURIComponent(texto)
